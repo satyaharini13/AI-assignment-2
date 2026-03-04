@@ -1,0 +1,40 @@
+# CAPTCHA Architecture
+
+CAPTCHA stands for Completely Automated Public Turing Test to Tell Computers and Humans Apart.
+
+It is used to distinguish human users from bots.
+
+## Implementation Idea
+
+1. System generates a random CAPTCHA challenge.
+2. The user attempts to solve the challenge.
+3. The system verifies the response.
+4. If correct, access is granted.
+5. If incorrect, access is denied.
+
+## Architecture
+
+User
+ |
+ v
+Web Interface
+ |
+ v
+CAPTCHA Generator
+ |
+ |------ Text CAPTCHA
+ |------ Image CAPTCHA
+ |------ Audio CAPTCHA
+ |
+ v
+User Response
+ |
+ v
+CAPTCHA Validator
+ |
+ v
+Decision Module
+ |         |
+ v         v
+Allow    Deny
+Access   Access
